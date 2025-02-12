@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الإلكتروني</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .video-description {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>مرحبًا بكم في موقعي الإلكتروني!</h1>
+        <p>تم إنشاء هذا الموقع باستخدام GitHub Pages.</p>
+        <p class="video-description">شاهد الفيديو التالي بأعلى جودة:</p>
+
+        <!-- تضمين فيديو من YouTube بجودة عالية -->
+        <iframe id="video-frame" 
+                src="https://www.youtube.com/embed/VIDEO_ID?rel=0&vq=hd1080" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+
+        <!-- زر تحميل الفيديو -->
+        <button class="button" id="download-btn">تحميل الفيديو</button>
+    </div>
+
+    <script>
+        // JavaScript للتفاعل مع المستخدم
+        document.getElementById('download-btn').addEventListener('click', function() {
+            alert('ميزة تحميل الفيديو غير مدعومة في هذا الموقع. يمكنك تحميل الفيديو من خلال موقع y2mate.com أو أدوات أخرى.');
+        });
+
+        // تغيير الفيديو عند النقر على صورة مصغرة
+        function changeVideo(videoID) {
+            var iframe = document.getElementById('video-frame');
+            iframe.src = "https://www.youtube.com/embed/" + videoID + "?rel=0&vq=hd1080";
+        }
+
+        // مثال على تغيير الفيديو بشكل تفاعلي
+        // يمكنك إضافة هذا الجزء في HTML في مكان مناسب (مثل أزرار أو صور مصغرة للفيديوهات الأخرى)
+        // changeVideo('NEW_VIDEO_ID');
+    </script>
+
+</body>
+</html>
