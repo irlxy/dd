@@ -61,6 +61,17 @@
             color: #777;
         }
 
+        .download-link {
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: block;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -79,24 +90,25 @@
         </iframe>
 
         <!-- زر تحميل الفيديو -->
-        <button class="button" id="download-btn">تحميل الفيديو</button>
+        <a href="https://www.y2mate.com/en/youtube/VIDEO_ID" target="_blank" class="download-link" id="download-link">تحميل الفيديو</a>
     </div>
 
     <script>
-        // JavaScript للتفاعل مع المستخدم
-        document.getElementById('download-btn').addEventListener('click', function() {
-            alert('ميزة تحميل الفيديو غير مدعومة في هذا الموقع. يمكنك تحميل الفيديو من خلال موقع y2mate.com أو أدوات أخرى.');
-        });
-
-        // تغيير الفيديو عند النقر على صورة مصغرة
-        function changeVideo(videoID) {
-            var iframe = document.getElementById('video-frame');
-            iframe.src = "https://www.youtube.com/embed/" + videoID + "?rel=0&vq=hd1080";
+        // JavaScript لتحديث رابط التحميل تلقائيًا بناءً على الفيديو الحالي
+        function updateDownloadLink(videoID) {
+            var downloadLink = document.getElementById('download-link');
+            downloadLink.href = "https://www.y2mate.com/en/youtube/" + videoID;
         }
 
-        // مثال على تغيير الفيديو بشكل تفاعلي
-        // يمكنك إضافة هذا الجزء في HTML في مكان مناسب (مثل أزرار أو صور مصغرة للفيديوهات الأخرى)
-        // changeVideo('NEW_VIDEO_ID');
+        // استبدل VIDEO_ID هنا بالـ ID الفعلي للفيديو
+        updateDownloadLink("VIDEO_ID");
+
+        // يمكنك إضافة وظيفة لتغيير الفيديو باستخدام هذه الدالة:
+        // function changeVideo(videoID) {
+        //     var iframe = document.getElementById('video-frame');
+        //     iframe.src = "https://www.youtube.com/embed/" + videoID + "?rel=0&vq=hd1080";
+        //     updateDownloadLink(videoID);
+        // }
     </script>
 
 </body>
